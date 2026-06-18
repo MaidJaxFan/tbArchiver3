@@ -1,0 +1,16 @@
+{
+  "name": "trollboxtodiscord3",
+  "version": "1.0.0",
+  "description": "tbarchiver3",
+  "license": "Unlicense",
+  "author": "MaidJaxFan",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "html-entities": "^2.6.0",
+    "socket.io-client": "^2.5.0"
+  }
+}
