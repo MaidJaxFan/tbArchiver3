@@ -1,6 +1,8 @@
 # tbArchiver3
 Archiver for Trollbox
 
+# IMPORTANT NOTE
+This isn't really ready for public release. You may find some behavior strange (e.g, prefix hardcoded). Running your own instance should be considered experimental.
 # Usage
 ## Step 1: Create a webhook 
 Right-click any channel, select "Edit Channel", and then go to Integrations.
