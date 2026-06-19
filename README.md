@@ -4,7 +4,9 @@ Archiver for Trollbox
 # Usage
 ## Step 1: Create a webhook 
 Right-click any channel, select "Edit Channel", and then go to Integrations.
+
 Click Webhooks, then "New Webhook".
+
 Expand the new section (should be named "Captain Hook") and then click "Copy Webhook URL"
 ## Step 2: Create the config file
 Create a file called `config.json`. Inside, write:
