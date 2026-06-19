@@ -18,6 +18,7 @@ socket.on('_connected', (data) => {
     socket.emit('user joined', 'tbArchiver3 (i!)', "#00ff00", "", "", "")
 })
 
+
 var countdown = 300;
 var initialCountdown = countdown;
 var processMessages = true;
@@ -64,7 +65,7 @@ socket.on('message', async (data) => {
             break;
     }
     if (data.msg.includes("i!scheduleshutdown")) {
-        if (data.home == "0fd4f7dadedf6264807a0fb67f68650d0d23ff191ea30236c6a3de1bad1b23a9") {
+        if (data.home == config.home) {
             var shutdownTime = data.msg.split(" ")[1]
             socket.send(`tbArchiver will shut down in ${shutdownTime} seconds`)
             processMessages = false;

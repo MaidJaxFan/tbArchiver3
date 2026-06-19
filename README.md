@@ -8,14 +8,22 @@ Right-click any channel, select "Edit Channel", and then go to Integrations.
 Click Webhooks, then "New Webhook".
 
 Expand the new section (should be named "Captain Hook") and then click "Copy Webhook URL"
+## Step 1.1: Get your home
+On Trollbox, type /who into the chatbox and hit Enter, or click Send.
+
+Copy the long string next to your name. 
 ## Step 2: Create the config file
 Create a file called `config.json`. Inside, write:
 
 	{
-		"webhook": ""
+		"webhook": "",
+		"home": ""
 	}
 
-Between the empty double quotes, paste the webhook URL.
+Between the empty double quotes next to "webhook", paste the webhook URL.
+
+Between the empty double quotes next to "home", paste your home.
+
 Now save the config file.
 ## Step 3: Run tbArchiver3
 At the terminal, type `npm i`. This will install the dependencies.
