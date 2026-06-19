@@ -8,9 +8,9 @@ Click Webhooks, then "New Webhook".
 Expand the new section (should be named "Captain Hook") and then click "Copy Webhook URL"
 ## Step 2: Create the config file
 Create a file called `config.json`. Inside, write:
-	{
+	```{
 		"webhook": ""
-	}
+	}```
 Between the empty double quotes, paste the webhook URL.
 Now save the config file.
 ## Step 3: Run tbArchiver3
