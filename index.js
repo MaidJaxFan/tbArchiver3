@@ -19,6 +19,7 @@ socket.on('_connected', (data) => {
 })
 
 var countdown = 300;
+var initialCountdown = countdown;
 var processMessages = true;
 
 function getChatLogFileName() {
@@ -32,7 +33,7 @@ async function writeToDisk(event) {
     const fileName = getChatLogFileName();
     const filePath = path.join(__dirname, 'output', fileName);
     await fs.mkdir("output", { recursive: true });
-    await fs.writeFile(filePath, data);
+    await fs.appendFile(filePath, data);
     switch (event.constructor.name) {
         case "MessageEvent":
             console.log(`[tbArchiver3]: Wrote message event to disk as ${fileName}`)
@@ -58,7 +59,8 @@ socket.on('message', async (data) => {
 
     switch (data.msg) {
         case "i!help":
-            socket.send(`tbArchiver is back with a vengeance :)\nI will never die, you sons of bitches!\nCreated by MaidJaxFan on June 17th, 2026 at around 21:00 to 22:00.\nJoin the server! https://dsc.gg/chatarchive2\n More shitty (or silly) projects at https://github.com/MaidJaxFan`)
+            socket.send(`THIS THING ARCHIVES MESSAGES\n
+                \ntbArchiver is back with a vengeance :)\nI will never die, you sons of bitches!\nCreated by MaidJaxFan on June 17th, 2026 at around 21:00 to 22:00.\nJoin the server! https://dsc.gg/chatarchive2\n More shitty (or silly) projects at https://github.com/MaidJaxFan`)
             break;
     }
     if (data.msg.includes("i!scheduleshutdown")) {
@@ -67,7 +69,7 @@ socket.on('message', async (data) => {
             socket.send(`tbArchiver will shut down in ${shutdownTime} seconds`)
             processMessages = false;
             setTimeout(() => {
-                process.exit(0);
+                process.exit(10);
             }, 1000 * shutdownTime);
         }
     }
@@ -100,13 +102,13 @@ socket.on('user change nick', async (data) => {
     await sendToDiscord(event, config.webhook);
 });
 
-setInterval(() => {
+/*setInterval(() => {
     console.log(`[tbArchiver3]: ${countdown} seconds until the next anti-kick event happens`)
     if (countdown <= 0) {
         var arrayOfColors = ["#a700ff", "green", "blue"]
         var randomPicking = Math.floor(Math.random() * arrayOfColors.length) + 1;
         socket.send(`Anti-kick ${Math.random()}`)
-        countdown = 180;
+        countdown = initialCountdown;
     }
     countdown -= 1;
-}, 1000)
+}, 1000)*/

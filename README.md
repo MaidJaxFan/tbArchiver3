@@ -29,19 +29,27 @@ Now run `node index.js` to start it. You should see output like:
 
 ## Step 4: Success! (and infinite loops)
 You have successfully installed tbArchiver3. It is advisable to run it in an infinite loop to avoid losing messages if tbArchiver3 crashes.
+
 If you are on Windows, create a batch file. It can be named however you want, just make sure it ends in ".bat".
+
 In the batch file, write:
+
 	@echo off
 	:1
 	node index.js
 	goto 1
+
 Save the batch file and run it.
+
 On Linux, create a shell script. It can be named however you want, just make sure it ends in ".sh".
+
 In the shell script, write:
+
 	while true
 	do
 	node index.js
 	done
+
 Save the shell script and run it.
 
 # License
