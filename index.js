@@ -60,8 +60,14 @@ socket.on('message', async (data) => {
 
     switch (data.msg) {
         case "i!help":
-            socket.send(`THIS THING ARCHIVES MESSAGES\n
-                \ntbArchiver is back with a vengeance :)\nI will never die, you sons of bitches!\nCreated by MaidJaxFan on June 17th, 2026 at around 21:00 to 22:00.\nJoin the server! https://dsc.gg/chatarchive2\n More shitty (or silly) projects at https://github.com/MaidJaxFan`)
+            socket.send(`
+                    \ntbArchiver is back with a vengeance :)
+                    \nI will never die, you sons of bitches!
+                    \nCreated by MaidJaxFan on June 17th, 2026 at around 21:00 to 22:00.
+                    \nJoin the server! https://dsc.gg/chatarchive2
+                    \ntbArchiver3 is public domain software (licensed under Unlicense)
+                    \nhttps://github.com/MaidJaxFan/tbArchiver3
+                    \n${Math.random()}`)
             break;
     }
     if (data.msg.includes("i!scheduleshutdown")) {
